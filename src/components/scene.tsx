@@ -7,6 +7,7 @@ import { Html, PerspectiveCamera, OrbitControls } from "@react-three/drei";
 import { store } from "../store";
 import Model from "./model";
 import Loader from "./loader";
+import ModelUploadForm from "./modelUploadForm";
 
 const Scene = () => {
   const { model } = useSnapshot(store);
@@ -32,13 +33,7 @@ const Scene = () => {
         far={10000}
       />
       {!model.data ? (
-        <Html center>
-          <Typography
-            sx={{ fontSize: "2em", color: "#aaa", textWrap: "nowrap" }}
-          >
-            Upload a Model File...
-          </Typography>
-        </Html>
+        <ModelUploadForm />
       ) : (
         <Suspense fallback={<Loader />}>{<Model />}</Suspense>
       )}
