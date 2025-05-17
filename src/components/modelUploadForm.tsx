@@ -35,9 +35,9 @@ const ModelUploadForm = () => {
       >
         <input {...getInputProps()} type="file" />
         {isDragActive ? (
-          <Typography>Drop the folder here...</Typography>
+          <Typography>Drop the file here...</Typography>
         ) : (
-          <Typography>Drag and drop a folder here</Typography>
+          <Typography>Drag and drop a file here</Typography>
         )}
       </div>
     </Html>
