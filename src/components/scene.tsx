@@ -2,11 +2,12 @@ import { Suspense } from "react";
 import { Typography } from "@mui/material";
 import { useSnapshot } from "valtio";
 import { Canvas } from "@react-three/fiber";
-import { Html, PerspectiveCamera, OrbitControls } from "@react-three/drei";
+import { PerspectiveCamera, OrbitControls } from "@react-three/drei";
 
 import { store } from "../store";
 import Model from "./model";
 import Loader from "./loader";
+import ModelUploadForm from "./modelUploadForm";
 
 const Scene = () => {
   const { model } = useSnapshot(store);
@@ -32,13 +33,7 @@ const Scene = () => {
         far={10000}
       />
       {!model.data ? (
-        <Html center>
-          <Typography
-            sx={{ fontSize: "2em", color: "#aaa", textWrap: "nowrap" }}
-          >
-            Upload a Model File...
-          </Typography>
-        </Html>
+        <ModelUploadForm />
       ) : (
         <Suspense fallback={<Loader />}>{<Model />}</Suspense>
       )}
