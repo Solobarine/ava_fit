@@ -9,7 +9,7 @@ const Model = () => {
   const { material, model, color, materialState, colorState, defaultTexture } =
     useSnapshot(store);
   const { scene } = useGLTF(model.data as string);
-  const modelRef = useRef(null);
+  const modelRef = useRef<THREE.Mesh>(null);
 
   // Apply Textures
   useEffect(() => {
@@ -18,10 +18,10 @@ const Model = () => {
     );
 
     // Apply the texture to all mesh materials
-    scene.traverse((child) => {
+    scene.traverse((child: any) => {
       if (child.isMesh && child.material) {
         if (Array.isArray(child.material)) {
-          child.material.forEach((mat) => {
+          child.material.forEach((mat: any) => {
             mat.map = texture;
             mat.needsUpdate = true;
           });
@@ -38,7 +38,7 @@ const Model = () => {
     const mesh = modelRef.current;
     if (!mesh) return;
 
-    mesh.traverse((child) => {
+    mesh.traverse((child: any) => {
       if (child.isMesh && colorState) {
         child.material.color.set(color);
         child.material.needsUpdate = true;

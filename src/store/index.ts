@@ -62,6 +62,10 @@ export const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
   e.target.value = "";
 };
 
+export const setModel = (url: string) => {
+  store.model.data = url;
+};
+
 export const resetScene = () => {
   store.colorState = false;
   store.materialState = false;
