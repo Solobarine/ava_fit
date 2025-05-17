@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Typography } from "@mui/material";
 import { useSnapshot } from "valtio";
 import { Canvas } from "@react-three/fiber";
-import { Html, PerspectiveCamera, OrbitControls } from "@react-three/drei";
+import { PerspectiveCamera, OrbitControls } from "@react-three/drei";
 
 import { store } from "../store";
 import Model from "./model";
