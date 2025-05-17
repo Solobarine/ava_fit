@@ -59,6 +59,7 @@ export const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const url = URL.createObjectURL(file);
     store.model.data = url;
   }
+  e.target.value = "";
 };
 
 export const resetScene = () => {
