@@ -2,6 +2,10 @@
 
 An interactive avatar fitting application built with React, Material UI, Three.js, and Three.js Fiber. This app provides a 3D fitting experience, allowing users to try different avatar outfits in a realistic 3D environment.
 
+## 📺 Live Demo
+
+The project is live here: [project demo](https://avafit.netlify.app)
+
 ## 🚀 Features
 
 - 3D avatar rendering with Three.js
